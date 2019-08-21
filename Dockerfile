@@ -1,6 +1,8 @@
 FROM 10.199.101.210:8180/python:3.6-alpine
 #Copiando os arquivos do projeto para o diretorio usr/src/app 
 COPY . /usr/src/app
+ENV http_proxy http://10.1.6.91:80
+ENV https_proxy https://10.1.6.91:80
 #Definindo o diretorio onde o CMD será executado e copiando o arquivo de requerimentos
 WORKDIR /usr/src/app
 COPY requirements.txt ./
