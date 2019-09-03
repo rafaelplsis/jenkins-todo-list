@@ -6,7 +6,7 @@ ENV https_proxy https://10.1.6.91:80
 #Definindo o diretorio onde o CMD será executado e copiando o arquivo de requerimentos
 WORKDIR /usr/src/app
 COPY requirements.txt ./
-RUN apk add --no-cache mariadb-dev linux-headers build-base
+RUN apk add mariadb-dev linux-headers build-base
 # Instalando os requerimentos com o PIP
 RUN pip install --no-cache-dir -r requirements.txt --proxy=10.1.6.91
 # Expondo a porta da APP
